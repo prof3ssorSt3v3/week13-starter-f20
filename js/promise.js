@@ -85,6 +85,9 @@ fehtsh('https://www.example.com/')
   .then((data) => {
     //data is the object created from the JSON string inside the body
     //property inside the Response object
+    //
+    // THIS is the only place we can see `data`
+    //
     let pre = document.querySelector('pre');
     pre.textContent = JSON.stringify(data.results, '\t', 2);
   })
@@ -93,3 +96,5 @@ fehtsh('https://www.example.com/')
     let pre = document.querySelector('pre');
     pre.textContent = err.message;
   });
+
+//CANNOT see or use `data` here
